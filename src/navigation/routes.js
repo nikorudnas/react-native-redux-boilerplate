@@ -5,7 +5,7 @@ const Routes = {
   Main: {
       screen: Main,
       navigationOptions: {
-      title: 'Example Navbar'
+      title: 'Main page'
     }
   },
   Alt: {

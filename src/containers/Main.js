@@ -1,7 +1,10 @@
+// @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as testAction from "../actions/testAction";
+import TestComponent from "../components/testComponent";
+import styles from "./styles/Main.style.js";
 
 import {
   View,
@@ -11,19 +14,17 @@ import {
 class Main extends React.Component {
 
   componentDidMount() {
-    this.props.testFunction('orange');
+    this.props.testFunction('Props says Hello!');
     console.log(this.props.testReducer.item);
-    setTimeout(() => {
-      this.props.navigation.dispatch({ type: 'goToAlt' });
-    }, 1500)
   };
 
   render() {
     return (
       <View>
-        <Text>
-          This is main container {this.props.testReducer ? this.props.testReducer.item : null}
+        <Text style={styles.text}>
+          This is main container. {this.props.testReducer ? this.props.testReducer.item : null}
         </Text>
+        <TestComponent navigation={this.props.navigation} />
       </View>
     );
   }

@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
@@ -9,18 +10,11 @@ import {
 } from 'react-native';
 
 class Alt extends React.Component {
-
-  componentDidMount() {
-    this.props.testFunction('orange');
-    console.log(this.props.testReducer.item);
-    //this.props.navigation.dispatch({ type: 'goToDashboard' });
-  };
-
   render() {
     return (
       <View>
         <Text>
-          This is alt container {this.props.testReducer ? this.props.testReducer.item : null}
+          This is alt container. {this.props.testReducer ? this.props.testReducer.item : null}
         </Text>
       </View>
     );
